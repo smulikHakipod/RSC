@@ -1,0 +1,5 @@
+Remote Syscall 
+Seperate between usermode and kernelmode remotely
+
+More details on 
+http://breaking-the-system.blogspot.com/2016/06/the-crazy-ideas-section-remote-syscalls.html
