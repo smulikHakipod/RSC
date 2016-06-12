@@ -1,16 +1,18 @@
 FD int socket( S int domain, S int type, S int protocol)
-S int connect( FD int sockfd, sockaddr addr, S socklen_t addrlen)
-S ssize_t write( FD int fd, C+1 const void *buf, S size_t count);
-S ssize_t read( FD int fd, <+1 void *buf, S size_t count);
-S ssize_t sendto( FD int sockfd, C+1 *buf, S size_t len, S int flags, sockaddr_recv *src_addr, S socklen_t *addrlen)
-S ssize_t recvfrom( FD int sockfd, <+1 *buf, S size_t len, S int flags, <+1R sockaddr_recv *src_addr, < socklen_t *addrlen)
+S int connect( FD int sockfd, >+1 void *addr, S int addrlen)
+S ssize_t write( FD int fd, >+1 void *buf, S int count);
+S ssize_t read( FD int fd, <+1 void *buf, S int count);
+S ssize_t sendto( FD int sockfd, >+1 void *buf, S int len, S int flags, >+1 void *src_addr, S int addrlen)
+S ssize_t recvfrom( FD int sockfd, <+1 void *buf, S int len, S int flags, <+1R void *src_addr, <> int *addrlen)
+S int bind( FD int sockfd, >+1 void *addr, S int addrlen);
 S int close( FD int fd)
-S int ioctl( FD int fd, S unsigned long request, <> ioctl_arg_t arg)
-S int fcntl( FD int fd, S unsigned long request, S arg)
-S int poll( <> pollfd *fds, S nfds_t nfds, S int timeout);
-S int select( S int nfds, FDS fd_set *readfds, FDS fd_set *writefds, FDS fd_set *exceptfds, timeval *timeout);
-S int getsockopt( FD int s, S int level, S int optname, < socklen_t optval, < socklen_t * restrict optlen);
-S int setsockopt( FD int sockfd, S int level, S int optname, C+1 const void *optval, S socklen_t optlen);
-S int getsockname( FD int sockfd, < sockaddr *addr, < socklen_t * addrlen );
-S ssize_t sendmsg( FD int sockfd, msghdr *msg, S int flags);
+S int ioctl( FD int fd, S long request, <> int *arg)
+S int fcntl( FD int fd, S long request, S arg)
+S int poll( <>*1 pollfd *fds, S nfds_t nfds, S int timeout);
+S int select( S int nfds, FDS fd_set *readfds, FDS fd_set *writefds, FDS fd_set *exceptfds, > timeval *timeout);
+S int getsockopt( FD int s, S int level, S int optname, <+1R void *optval, <> int *optlen);
+S int setsockopt( FD int sockfd, S int level, S int optname, >+1 void *optval, S int optlen);
+S int getsockname( FD int sockfd, <+1R void *addr, <> int *addrlen );
+S ssize_t sendmsg( FD int sockfd, <> msghdr *msg, S int flags);
 S ssize_t recvmsg( FD int sockfd, <> msghdr *msg, S int flags);
+S int sendmmsg( FD int sockfd, <>*1 mmsghdr *msgvec, S int vlen, S int flags);
